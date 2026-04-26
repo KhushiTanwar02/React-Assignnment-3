@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ─── Variables ─────────────────────────────── */
+:root {
+  --bg: #f5f0e8;
+  --card: #fffdf7;
+  --border: #d9cfc0;
+  --text: #2c2416;
+  --muted: #8a7d6a;
+  --accent: #c05e2a;
+  --green: #2e7d5e;
+  --green-bg: #eaf5f0;
+  --red: #b0302a;
+  --red-bg: #fdf0ef;
+  --orange: #c07a20;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --radius: 12px;
+}
+
+/* ─── Reset ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── App Background ─────────────────────────── */
+.app-bg {
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(180,160,120,0.18) 28px
+    );
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  padding: 32px 16px 60px;
+}
+
+.app-container {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Header ─────────────────────────────────── */
+.header {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.header-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.header-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.header-title {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.header-title span {
+  color: var(--accent);
+}
+
+/* ─── Form Card ──────────────────────────────── */
+.form-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px 28px;
+}
+
+.form-title {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.add-form {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+}
+
+.form-group label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.form-group input {
+  background: #faf7f1;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  border-color: var(--accent);
+  background: #fff;
+}
+
+.btn-add {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+  height: 42px;
+}
+
+.btn-add:hover { background: #a34d22; }
+.btn-add:active { transform: scale(0.97); }
+
+/* ─── Stats Bar ───────────────────────────────── */
+.stats-bar {
+  display: flex;
+  gap: 0;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px 10px;
+  border-right: 1px solid var(--border);
+  gap: 4px;
+}
+
+.stat:last-child { border-right: none; }
+
+.stat-num {
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.stat-num.green { color: var(--green); }
+.stat-num.red { color: var(--red); }
+.stat-num.orange { color: var(--orange); }
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* ─── Table Section ──────────────────────────── */
+.table-section {
+  background: transparent;
+}
+
+.table-wrap {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.student-table thead tr {
+  background: #f0ebe0;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.student-table th {
+  padding: 13px 16px;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.student-row {
+  border-bottom: 1px solid #ede7d8;
+  transition: background 0.15s;
+}
+
+.student-row:last-child { border-bottom: none; }
+.student-row:hover { background: #fdf8f0; }
+
+.pass-row { border-left: 4px solid var(--green); }
+.fail-row { border-left: 4px solid var(--red); }
+
+.student-table td {
+  padding: 14px 16px;
+  vertical-align: middle;
+}
+
+.td-name {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--text);
+}
+
+.td-score {
+  font-family: 'Lora', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--orange);
+}
+
+/* ─── Badge ──────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-pass {
+  background: var(--green-bg);
+  color: var(--green);
+  border: 1px solid #b2d8c8;
+}
+
+.badge-fail {
+  background: var(--red-bg);
+  color: var(--red);
+  border: 1px solid #f0c0be;
+}
+
+/* ─── Update Group ───────────────────────────── */
+.update-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.update-group input {
+  width: 72px;
+  background: #faf7f1;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.update-group input:focus { border-color: var(--accent); }
+
+.btn-save {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.btn-save:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+/* ─── Empty ──────────────────────────────────── */
+.empty-msg {
+  background: var(--card);
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-style: italic;
+  font-family: 'Lora', serif;
+}
+
+/* ─── Footer ─────────────────────────────────── */
+.footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top: 8px;
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 560px) {
+  .add-form { flex-direction: column; }
+  .btn-add { width: 100%; }
+  .student-table th:nth-child(4),
+  .student-table td:nth-child(4) { display: none; }
+  .header-title { font-size: 1.5rem; }
+}
